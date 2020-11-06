@@ -7,15 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE46CD84254106C500C415B2 /* NewsFeedCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46CD83254106C500C415B2 /* NewsFeedCodeCell.swift */; };
+		CE46CD8825413D2E00C415B2 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46CD8725413D2E00C415B2 /* Constraints.swift */; };
+		CE48D62A255363D00044D198 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48D629255363D00044D198 /* FooterView.swift */; };
+		CE48D62E255379580044D198 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = CE48D62D255379580044D198 /* Localizable.stringsdict */; };
+		CE48D63025537E5E0044D198 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48D62F25537E5E0044D198 /* GradientView.swift */; };
+		CE92ADC2254223C200B50BE5 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE92ADC1254223C200B50BE5 /* Constant.swift */; };
 		CEBF766625365B9E00D8675A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF766525365B9E00D8675A /* AppDelegate.swift */; };
 		CEBF766825365B9E00D8675A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF766725365B9E00D8675A /* SceneDelegate.swift */; };
 		CEBF766A25365B9E00D8675A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF766925365B9E00D8675A /* ViewController.swift */; };
 		CEBF766D25365B9E00D8675A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEBF766B25365B9E00D8675A /* Main.storyboard */; };
 		CEBF766F25365B9E00D8675A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEBF766E25365B9E00D8675A /* Assets.xcassets */; };
 		CEBF767225365B9E00D8675A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEBF767025365B9E00D8675A /* LaunchScreen.storyboard */; };
+		CEBF767E2536609B00D8675A /* VKSdkFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEBF767D2536609B00D8675A /* VKSdkFramework.framework */; };
+		CEBF767F2536609B00D8675A /* VKSdkFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEBF767D2536609B00D8675A /* VKSdkFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CEBF7683253666F900D8675A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF7682253666F900D8675A /* AuthService.swift */; };
+		CEBF768925378FE500D8675A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF768825378FE500D8675A /* NetworkService.swift */; };
+		CEBF768B2537917A00D8675A /* API Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF768A2537917A00D8675A /* API Model.swift */; };
+		CEBF768E2537A7E700D8675A /* VKResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF768D2537A7E700D8675A /* VKResponse.swift */; };
+		CEBF76902537ACE700D8675A /* Networkdatafetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF768F2537ACE700D8675A /* Networkdatafetcher.swift */; };
+		CEBF76992537C44000D8675A /* VKFeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF76922537C44000D8675A /* VKFeedPresenter.swift */; };
+		CEBF769A2537C44000D8675A /* VKFeedWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF76932537C44000D8675A /* VKFeedWorker.swift */; };
+		CEBF769B2537C44000D8675A /* VKFeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF76942537C44000D8675A /* VKFeedRouter.swift */; };
+		CEBF769C2537C44000D8675A /* VKFeedModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF76952537C44000D8675A /* VKFeedModels.swift */; };
+		CEBF769D2537C44000D8675A /* VKFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF76962537C44000D8675A /* VKFeedViewController.swift */; };
+		CEBF769E2537C44000D8675A /* VKFeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF76972537C44000D8675A /* VKFeedInteractor.swift */; };
+		CEBF76A12538692E00D8675A /* VKFeedSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEBF76A02538692E00D8675A /* VKFeedSB.storyboard */; };
+		CEBF76A92538705500D8675A /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF76A72538705500D8675A /* FeedCell.swift */; };
+		CEBF76AA2538705500D8675A /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBF76A82538705500D8675A /* FeedCell.xib */; };
+		CEBF76BB253CD0DA00D8675A /* WebImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF76BA253CD0DA00D8675A /* WebImageView.swift */; };
+		CEBF76BD253DDA5500D8675A /* FeedCellLayoutCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF76BC253DDA5400D8675A /* FeedCellLayoutCalculator.swift */; };
+		CEBF76BF253DEC0000D8675A /* String + Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF76BE253DEC0000D8675A /* String + Height.swift */; };
+		CECA65D8254B3389004FB416 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA65D7254B3389004FB416 /* GalleryView.swift */; };
+		CECA65DA254B3512004FB416 /* GalleryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA65D9254B3512004FB416 /* GalleryViewCell.swift */; };
+		CEF45871254B5BF800107CFE /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF45870254B5BF800107CFE /* CustomLayout.swift */; };
+		CEF458762551EFE700107CFE /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF458752551EFE700107CFE /* TitleView.swift */; };
+		CEF458782551F01600107CFE /* InsetabletextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF458772551F01600107CFE /* InsetabletextField.swift */; };
+		CEF4587A2551FCB800107CFE /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF458792551FCB800107CFE /* UserResponse.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CEBF76802536609B00D8675A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CEBF767F2536609B00D8675A /* VKSdkFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		CE46CD83254106C500C415B2 /* NewsFeedCodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCodeCell.swift; sourceTree = "<group>"; };
+		CE46CD8725413D2E00C415B2 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		CE48D629255363D00044D198 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		CE48D62D255379580044D198 /* Localizable.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
+		CE48D62F25537E5E0044D198 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		CE92ADC1254223C200B50BE5 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		CEBF766225365B9E00D8675A /* VK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBF766525365B9E00D8675A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEBF766725365B9E00D8675A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +75,30 @@
 		CEBF766E25365B9E00D8675A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEBF767125365B9E00D8675A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEBF767325365B9E00D8675A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEBF767D2536609B00D8675A /* VKSdkFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VKSdkFramework.framework; path = Carthage/Build/iOS/VKSdkFramework.framework; sourceTree = "<group>"; };
+		CEBF7682253666F900D8675A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		CEBF768825378FE500D8675A /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		CEBF768A2537917A00D8675A /* API Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API Model.swift"; sourceTree = "<group>"; };
+		CEBF768D2537A7E700D8675A /* VKResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKResponse.swift; sourceTree = "<group>"; };
+		CEBF768F2537ACE700D8675A /* Networkdatafetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networkdatafetcher.swift; sourceTree = "<group>"; };
+		CEBF76922537C44000D8675A /* VKFeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKFeedPresenter.swift; sourceTree = "<group>"; };
+		CEBF76932537C44000D8675A /* VKFeedWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKFeedWorker.swift; sourceTree = "<group>"; };
+		CEBF76942537C44000D8675A /* VKFeedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKFeedRouter.swift; sourceTree = "<group>"; };
+		CEBF76952537C44000D8675A /* VKFeedModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKFeedModels.swift; sourceTree = "<group>"; };
+		CEBF76962537C44000D8675A /* VKFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKFeedViewController.swift; sourceTree = "<group>"; };
+		CEBF76972537C44000D8675A /* VKFeedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKFeedInteractor.swift; sourceTree = "<group>"; };
+		CEBF76A02538692E00D8675A /* VKFeedSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VKFeedSB.storyboard; sourceTree = "<group>"; };
+		CEBF76A72538705500D8675A /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		CEBF76A82538705500D8675A /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
+		CEBF76BA253CD0DA00D8675A /* WebImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageView.swift; sourceTree = "<group>"; };
+		CEBF76BC253DDA5400D8675A /* FeedCellLayoutCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCellLayoutCalculator.swift; sourceTree = "<group>"; };
+		CEBF76BE253DEC0000D8675A /* String + Height.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Height.swift"; sourceTree = "<group>"; };
+		CECA65D7254B3389004FB416 /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
+		CECA65D9254B3512004FB416 /* GalleryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewCell.swift; sourceTree = "<group>"; };
+		CEF45870254B5BF800107CFE /* CustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
+		CEF458752551EFE700107CFE /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		CEF458772551F01600107CFE /* InsetabletextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetabletextField.swift; sourceTree = "<group>"; };
+		CEF458792551FCB800107CFE /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +106,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEBF767E2536609B00D8675A /* VKSdkFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE48D628255363BD0044D198 /* FooterView */ = {
+			isa = PBXGroup;
+			children = (
+				CE48D629255363D00044D198 /* FooterView.swift */,
+			);
+			path = FooterView;
+			sourceTree = "<group>";
+		};
 		CEBF765925365B9E00D8675A = {
 			isa = PBXGroup;
 			children = (
 				CEBF766425365B9E00D8675A /* VK */,
 				CEBF766325365B9E00D8675A /* Products */,
+				CEBF767C2536609B00D8675A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,12 +144,105 @@
 				CEBF766525365B9E00D8675A /* AppDelegate.swift */,
 				CEBF766725365B9E00D8675A /* SceneDelegate.swift */,
 				CEBF766925365B9E00D8675A /* ViewController.swift */,
+				CEF458742551EFD300107CFE /* TitleView */,
+				CEBF76B9253CD0C300D8675A /* helpers */,
+				CEBF76A225386B1700D8675A /* Cells */,
+				CEBF76912537C41C00D8675A /* CleanSwift */,
+				CEBF768C2537A7CF00D8675A /* Model */,
+				CEBF7681253666E200D8675A /* Services */,
 				CEBF766B25365B9E00D8675A /* Main.storyboard */,
 				CEBF766E25365B9E00D8675A /* Assets.xcassets */,
 				CEBF767025365B9E00D8675A /* LaunchScreen.storyboard */,
 				CEBF767325365B9E00D8675A /* Info.plist */,
 			);
 			path = VK;
+			sourceTree = "<group>";
+		};
+		CEBF767C2536609B00D8675A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF767D2536609B00D8675A /* VKSdkFramework.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CEBF7681253666E200D8675A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF7682253666F900D8675A /* AuthService.swift */,
+				CEBF768825378FE500D8675A /* NetworkService.swift */,
+				CE48D62D255379580044D198 /* Localizable.stringsdict */,
+				CEBF768F2537ACE700D8675A /* Networkdatafetcher.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CEBF768C2537A7CF00D8675A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF768A2537917A00D8675A /* API Model.swift */,
+				CEBF768D2537A7E700D8675A /* VKResponse.swift */,
+				CEF458792551FCB800107CFE /* UserResponse.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CEBF76912537C41C00D8675A /* CleanSwift */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF76972537C44000D8675A /* VKFeedInteractor.swift */,
+				CEBF76922537C44000D8675A /* VKFeedPresenter.swift */,
+				CEBF76962537C44000D8675A /* VKFeedViewController.swift */,
+				CEBF76A02538692E00D8675A /* VKFeedSB.storyboard */,
+				CEBF76932537C44000D8675A /* VKFeedWorker.swift */,
+				CEBF76942537C44000D8675A /* VKFeedRouter.swift */,
+				CEBF76952537C44000D8675A /* VKFeedModels.swift */,
+			);
+			path = CleanSwift;
+			sourceTree = "<group>";
+		};
+		CEBF76A225386B1700D8675A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CE48D628255363BD0044D198 /* FooterView */,
+				CECA65DB254B351A004FB416 /* GalleryView */,
+				CEBF76A72538705500D8675A /* FeedCell.swift */,
+				CE46CD8725413D2E00C415B2 /* Constraints.swift */,
+				CE46CD83254106C500C415B2 /* NewsFeedCodeCell.swift */,
+				CEBF76A82538705500D8675A /* FeedCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CEBF76B9253CD0C300D8675A /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF76BA253CD0DA00D8675A /* WebImageView.swift */,
+				CEBF76BC253DDA5400D8675A /* FeedCellLayoutCalculator.swift */,
+				CE48D62F25537E5E0044D198 /* GradientView.swift */,
+				CEBF76BE253DEC0000D8675A /* String + Height.swift */,
+				CE92ADC1254223C200B50BE5 /* Constant.swift */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
+		CECA65DB254B351A004FB416 /* GalleryView */ = {
+			isa = PBXGroup;
+			children = (
+				CECA65D7254B3389004FB416 /* GalleryView.swift */,
+				CEF45870254B5BF800107CFE /* CustomLayout.swift */,
+				CECA65D9254B3512004FB416 /* GalleryViewCell.swift */,
+			);
+			path = GalleryView;
+			sourceTree = "<group>";
+		};
+		CEF458742551EFD300107CFE /* TitleView */ = {
+			isa = PBXGroup;
+			children = (
+				CEF458752551EFE700107CFE /* TitleView.swift */,
+				CEF458772551F01600107CFE /* InsetabletextField.swift */,
+			);
+			path = TitleView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,6 +255,8 @@
 				CEBF765E25365B9E00D8675A /* Sources */,
 				CEBF765F25365B9E00D8675A /* Frameworks */,
 				CEBF766025365B9E00D8675A /* Resources */,
+				CEBF767A25365CAA00D8675A /* ShellScript */,
+				CEBF76802536609B00D8675A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -124,22 +304,72 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEBF76A12538692E00D8675A /* VKFeedSB.storyboard in Resources */,
 				CEBF767225365B9E00D8675A /* LaunchScreen.storyboard in Resources */,
 				CEBF766F25365B9E00D8675A /* Assets.xcassets in Resources */,
 				CEBF766D25365B9E00D8675A /* Main.storyboard in Resources */,
+				CEBF76AA2538705500D8675A /* FeedCell.xib in Resources */,
+				CE48D62E255379580044D198 /* Localizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CEBF767A25365CAA00D8675A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/VKSdkFramework.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CEBF765E25365B9E00D8675A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEBF769A2537C44000D8675A /* VKFeedWorker.swift in Sources */,
+				CE48D62A255363D00044D198 /* FooterView.swift in Sources */,
+				CEBF76BF253DEC0000D8675A /* String + Height.swift in Sources */,
+				CE46CD84254106C500C415B2 /* NewsFeedCodeCell.swift in Sources */,
+				CEBF76BB253CD0DA00D8675A /* WebImageView.swift in Sources */,
+				CEBF769D2537C44000D8675A /* VKFeedViewController.swift in Sources */,
+				CEBF76BD253DDA5500D8675A /* FeedCellLayoutCalculator.swift in Sources */,
+				CEF45871254B5BF800107CFE /* CustomLayout.swift in Sources */,
 				CEBF766A25365B9E00D8675A /* ViewController.swift in Sources */,
+				CEBF769E2537C44000D8675A /* VKFeedInteractor.swift in Sources */,
+				CEBF76902537ACE700D8675A /* Networkdatafetcher.swift in Sources */,
 				CEBF766625365B9E00D8675A /* AppDelegate.swift in Sources */,
+				CECA65DA254B3512004FB416 /* GalleryViewCell.swift in Sources */,
+				CEBF769C2537C44000D8675A /* VKFeedModels.swift in Sources */,
 				CEBF766825365B9E00D8675A /* SceneDelegate.swift in Sources */,
+				CEF458762551EFE700107CFE /* TitleView.swift in Sources */,
+				CE46CD8825413D2E00C415B2 /* Constraints.swift in Sources */,
+				CEBF76992537C44000D8675A /* VKFeedPresenter.swift in Sources */,
+				CEF4587A2551FCB800107CFE /* UserResponse.swift in Sources */,
+				CEF458782551F01600107CFE /* InsetabletextField.swift in Sources */,
+				CE92ADC2254223C200B50BE5 /* Constant.swift in Sources */,
+				CEBF768B2537917A00D8675A /* API Model.swift in Sources */,
+				CEBF7683253666F900D8675A /* AuthService.swift in Sources */,
+				CEBF768E2537A7E700D8675A /* VKResponse.swift in Sources */,
+				CEBF76A92538705500D8675A /* FeedCell.swift in Sources */,
+				CECA65D8254B3389004FB416 /* GalleryView.swift in Sources */,
+				CE48D63025537E5E0044D198 /* GradientView.swift in Sources */,
+				CEBF768925378FE500D8675A /* NetworkService.swift in Sources */,
+				CEBF769B2537C44000D8675A /* VKFeedRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +518,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JVC2S59PM5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = VK/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -307,6 +541,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JVC2S59PM5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = VK/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
