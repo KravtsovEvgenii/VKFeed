@@ -9,25 +9,31 @@ import UIKit
 import VKSdkFramework
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
+    
     var window: UIWindow?
     var authService : AuthService!
 
-    
+    //Scene Delegate Singleton
     static func shared()-> SceneDelegate{
         let scene = UIApplication.shared.connectedScenes.first
         let sd: SceneDelegate = scene?.delegate as! SceneDelegate
         return sd
     }
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
+        
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
+        
         authService = AuthService()
         authService.delegate = self
+        //Устанавливаем root vc
         let authVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
         window?.rootViewController = authVC
         window?.makeKeyAndVisible()
@@ -69,8 +75,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 }
+//MARK: AuthServiceDelegate
 extension SceneDelegate: AuthServiceDelegate{
     func authFinished() {
+        //Открываем Контроллер с лентой
         let feedVC = UIStoryboard(name: "VKFeedSB", bundle: nil).instantiateViewController(withIdentifier: "VKFeedViewController") as! VKFeedViewController
         
         let navigationVC = UINavigationController(rootViewController: feedVC)

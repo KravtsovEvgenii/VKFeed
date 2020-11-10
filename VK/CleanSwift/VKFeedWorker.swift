@@ -45,6 +45,7 @@ class VKFeedService {
         guard let feed = self.feedResponse else {return}
         completion(revealedPostIds,feed)
     }
+    //Получаем новые посты
     func getNextBatch(completion: @escaping ([Int],VKResponse)->Void) {
         newPostOffset = feedResponse?.response.nextFrom
         dataFetcher.getFeed(nextBatchFrom: newPostOffset) { [weak self](feed) in
@@ -67,7 +68,7 @@ class VKFeedService {
                 }
                 self?.feedResponse?.response.profiles = profiles
                 
-                
+                //То же самое с группами
                 var updatedGroups = feed.response.groups
                 if let oldGroups = self?.feedResponse?.response.groups {
                     let oldGroupsFiltered = oldGroups.filter { (oldGroup) -> Bool in
@@ -84,5 +85,4 @@ class VKFeedService {
             completion(self!.revealedPostIds,feedResponse)
         }
     }
-
 }

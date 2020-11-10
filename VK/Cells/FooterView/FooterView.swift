@@ -5,7 +5,7 @@
 
 import Foundation
 import UIKit
-
+//Активити контроллер и лейбл с количеством загруженных постов для юзера, когда он долистывает до конца ленты
 class FooterView: UIView {
     
     private var myLabel: UILabel = {

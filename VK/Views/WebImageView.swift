@@ -21,13 +21,11 @@ class WebImageView: UIImageView{
             }
             
             let dataTask = URLSession.shared.dataTask(with: url) {[weak self] (data, response, error) in
-                
+                // Устанавливаем картинку на главном потоке
                 DispatchQueue.main.async {
                     guard let data = data, let response = response else {return}
                     self?.handleImageData(data: data, response: response)
                 }
-                
-                
             }
             dataTask.resume()
         }

@@ -12,6 +12,7 @@ class GalleryViewCell: UICollectionViewCell {
     
     let myImageView: WebImageView = {
        let imageView = WebImageView()
+        //Позволяем вью растягиваться
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .white

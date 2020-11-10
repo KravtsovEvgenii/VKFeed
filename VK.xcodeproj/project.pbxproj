@@ -121,6 +121,25 @@
 			path = FooterView;
 			sourceTree = "<group>";
 		};
+		CE48D631255998600044D198 /* Main VC */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF766925365B9E00D8675A /* ViewController.swift */,
+			);
+			path = "Main VC";
+			sourceTree = "<group>";
+		};
+		CE48D632255998AF0044D198 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE48D62F25537E5E0044D198 /* GradientView.swift */,
+				CEBF76BA253CD0DA00D8675A /* WebImageView.swift */,
+				CECA65DB254B351A004FB416 /* GalleryView */,
+				CEF458742551EFD300107CFE /* TitleView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CEBF765925365B9E00D8675A = {
 			isa = PBXGroup;
 			children = (
@@ -143,9 +162,9 @@
 			children = (
 				CEBF766525365B9E00D8675A /* AppDelegate.swift */,
 				CEBF766725365B9E00D8675A /* SceneDelegate.swift */,
-				CEBF766925365B9E00D8675A /* ViewController.swift */,
-				CEF458742551EFD300107CFE /* TitleView */,
-				CEBF76B9253CD0C300D8675A /* helpers */,
+				CE48D631255998600044D198 /* Main VC */,
+				CE48D632255998AF0044D198 /* Views */,
+				CEBF76B9253CD0C300D8675A /* Helpers */,
 				CEBF76A225386B1700D8675A /* Cells */,
 				CEBF76912537C41C00D8675A /* CleanSwift */,
 				CEBF768C2537A7CF00D8675A /* Model */,
@@ -205,25 +224,22 @@
 			isa = PBXGroup;
 			children = (
 				CE48D628255363BD0044D198 /* FooterView */,
-				CECA65DB254B351A004FB416 /* GalleryView */,
 				CEBF76A72538705500D8675A /* FeedCell.swift */,
+				CEBF76A82538705500D8675A /* FeedCell.xib */,
 				CE46CD8725413D2E00C415B2 /* Constraints.swift */,
 				CE46CD83254106C500C415B2 /* NewsFeedCodeCell.swift */,
-				CEBF76A82538705500D8675A /* FeedCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		CEBF76B9253CD0C300D8675A /* helpers */ = {
+		CEBF76B9253CD0C300D8675A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				CEBF76BA253CD0DA00D8675A /* WebImageView.swift */,
 				CEBF76BC253DDA5400D8675A /* FeedCellLayoutCalculator.swift */,
-				CE48D62F25537E5E0044D198 /* GradientView.swift */,
 				CEBF76BE253DEC0000D8675A /* String + Height.swift */,
 				CE92ADC1254223C200B50BE5 /* Constant.swift */,
 			);
-			path = helpers;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		CECA65DB254B351A004FB416 /* GalleryView */ = {
@@ -518,6 +534,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JVC2S59PM5;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -541,6 +558,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JVC2S59PM5;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

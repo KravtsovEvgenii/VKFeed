@@ -22,9 +22,15 @@ class AuthService: NSObject,VKSdkDelegate,VKSdkUIDelegate {
    weak var delegate: AuthServiceDelegate?
     
     var token: String? {
+        if let tk = UserDefaults.standard.value(forKey: "token") as? String{
+            return tk
+        }
         return VKSdk.accessToken()?.accessToken
     }
     var userId: String? {
+        if let id = UserDefaults.standard.value(forKey: "userID") as? String{
+         return id
+        }
         return VKSdk.accessToken()?.userId
     }
     override init() {
@@ -36,53 +42,33 @@ class AuthService: NSObject,VKSdkDelegate,VKSdkUIDelegate {
     
     //Auth func
     func wakeUpSession() {
-        let scope = ["wall","friends"]//,"friends","wall","photos","audio","video","groups"]
-        VKSdk.wakeUpSession(scope) { [delegate](authStatus, error) in
-//            if authStatus == VKAuthorizationState.authorized {
-//                print("VKAuthorizationState.authorized")
-//                delegate?.authFinished()
-//            } else if authStatus == VKAuthorizationState.initialized {
-//                print("VKAuthorizationState.initialized")
-//                VKSdk.authorize(scope)
-//            } else {
-//                print("auth problems, state \(authStatus) error \(String(describing: error))")
-//                delegate?.vkSdkUserAuthorizationFailed()
-//            }
+        let scope = ["wall","friends","offline"]
             
-            switch authStatus {
-            case .authorized:
-                print("aut")
-                delegate?.authFinished()
-
-            case .initialized:
-                VKSdk.authorize(scope)
-
-                print("ini")//Вызовет VK Should present
-            case .error:
-                print(error!.localizedDescription)
-            case .external:
-                print("ext")
-            case .pending:
-                print("pending")
-            case .safariInApp:
-                print("safariInApp")
-            case .webview:
-                print("webview")
-            case .unknown:
-                VKSdk.authorize(scope)
-                print("unknown")
-            @unknown default:
-                print("default")
+            VKSdk.wakeUpSession(scope) { [delegate] (state, error) in
+                if state == VKAuthorizationState.authorized {
+                    print("VKAuthorizationState.authorized")
+                    delegate?.authFinished()
+                } else if state == VKAuthorizationState.initialized {
+                    if self.token != nil, self.userId != nil {
+                        delegate?.authFinished()
+                    }else {
+                    VKSdk.authorize(scope)
+                    }
+                } else {
+                    print("auth problems, state \(state) error \(String(describing: error))")
+                    delegate?.vkSdkUserAuthorizationFailed()
+                }
             }
-            
-        }
     }
-
     //Методы при выполнении которыъ передаем их дальнейшее выполнение делегату 
     func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {
-        if result.token != nil {
+        if result.token.accessToken != nil {
+            //Для того чтобы мы не попадали на страницу подтверждения предоставления доступа к профилю храним токен и ID  в User Defaults
+            UserDefaults.standard.setValue(result.token.accessToken, forKey: "token")
+            UserDefaults.standard.setValue(result.token.userId, forKey: "userID")
+            UserDefaults.standard.synchronize()
         delegate?.authFinished()
-        }
+    }
     }
     func vkSdkUserAuthorizationFailed() {
         delegate?.vkSdkUserAuthorizationFailed()
@@ -97,3 +83,6 @@ class AuthService: NSObject,VKSdkDelegate,VKSdkUIDelegate {
     }
     
 }
+
+
+

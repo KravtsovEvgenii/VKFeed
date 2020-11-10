@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+
 struct Constant {
     static let cardViewInsets = UIEdgeInsets(top: 0, left: 8, bottom: 12, right: 8)
     static let topViewHeight: CGFloat = 55

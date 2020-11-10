@@ -124,14 +124,13 @@ extension VKFeedViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //        let cell = feedTableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedCell
         
-        let cell = feedTableView.dequeueReusableCell(withIdentifier: NewsFeedCodeCell.reuseIdentifier) as! NewsFeedCodeCell
+        let cell = feedTableView.dequeueReusableCell(withIdentifier:                NewsFeedCodeCell.reuseIdentifier) as! NewsFeedCodeCell
         let post = postsArray.cells[indexPath.row]
         cell.selectionStyle = .none
         cell.setup(fromPost: post)
         cell.contentView.isUserInteractionEnabled = false
-        cell.showDelegate = self
+        cell.delegate = self
         return cell
     }
     
@@ -143,6 +142,7 @@ extension VKFeedViewController: UITableViewDelegate, UITableViewDataSource {
         let viewModel = postsArray.cells[indexPath.row]
         return  viewModel.postSizes.totalHeight
     }
+    
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if scrollView.contentOffset.y > scrollView.contentSize.height / 1.05 {
             interactor?.makeRequest(request: .getNextBatch)
@@ -158,6 +158,5 @@ extension VKFeedViewController: NewsfeedCodeCellDelegate {
         let item = postsArray.cells[indexPath.row]
         interactor?.makeRequest(request: VKFeed.Model.Request.RequestType.revealPostText(postID: item.postID))
     }
-    
 }
 

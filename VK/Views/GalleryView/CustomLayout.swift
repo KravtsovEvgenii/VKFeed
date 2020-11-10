@@ -54,14 +54,14 @@ class RowLayout: UICollectionViewLayout {
         guard var rowHeight = RowLayout.rowHeightCounter(superviewWidth: superviewWidth, photosArray: photos) else { return }
         
         rowHeight = rowHeight / CGFloat(RowLayout.numbersOfRows)
-        
+        //получаем массив соотношения сторон
         let photosRatios = photos.map { $0.height / $0.width }
         
         var yOffset = [CGFloat]()
         for row in 0 ..< RowLayout.numbersOfRows {
             yOffset.append(CGFloat(row) * rowHeight)
         }
-        
+        //Получаем отступы для фотографий в коллекции
         var xOffset = [CGFloat](repeating: 0, count: RowLayout.numbersOfRows)
         
         var row = 0
@@ -76,7 +76,7 @@ class RowLayout: UICollectionViewLayout {
             let attribute = UICollectionViewLayoutAttributes(forCellWith: indexPath)
             attribute.frame = insetFrame
             cache.append(attribute)
-            
+            //Получаем отступ для фото в коллекции
             contentWidth = max(contentWidth, frame.maxX)
             xOffset[row] = xOffset[row] + width
             row = row < (RowLayout.numbersOfRows - 1) ? (row + 1) : 0
@@ -84,6 +84,8 @@ class RowLayout: UICollectionViewLayout {
         
     }
     
+    
+    //Получаем изображение с минимальными разменами
     static func rowHeightCounter(superviewWidth: CGFloat, photosArray: [CGSize]) -> CGFloat? {
         var rowHeight: CGFloat
         
@@ -102,7 +104,6 @@ class RowLayout: UICollectionViewLayout {
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        
         var visibleLayoutAttributes = [UICollectionViewLayoutAttributes]()
         
         for attatibute in cache {

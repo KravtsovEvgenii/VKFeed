@@ -54,7 +54,7 @@ class TitleView: UIView {
                            trailing: myAvatarView.leadingAnchor,
                            padding: UIEdgeInsets.init(top: 4, left: 4, bottom: 4, right: 12))
     }
-    
+    //
     override var intrinsicContentSize: CGSize {
         return UIView.layoutFittingExpandedSize
     }

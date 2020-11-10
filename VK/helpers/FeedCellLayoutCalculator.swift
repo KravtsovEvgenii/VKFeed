@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+//В модель структуры будем передавать динамические размеры жлементов ячейки
 struct Sizes:PostSizes {
     var moreButtonrect: CGRect
     var postLabelRect: CGRect
@@ -24,7 +25,6 @@ protocol FeedCellLayoutProtocol {
 
 
 final class FeedCellLayoutCalculator: FeedCellLayoutProtocol{
-   
     
     func getSizes(fromText text: String?, photoAttachment photos: [Photo]?, isFullSizedPost: Bool) -> PostSizes {
         var showMoreButton = false
@@ -38,28 +38,28 @@ final class FeedCellLayoutCalculator: FeedCellLayoutProtocol{
             
             var height = text.calculateHeight(width: labelWidth, font: Constant.postLabelFont)
             
-           
+            
             let limitHeight = Constant.postLabelFont.lineHeight * Constant.minifiedPostLimitLines
-        if !isFullSizedPost &&  height > limitHeight {
-            height = Constant.postLabelFont.lineHeight * Constant.minifiedPostLines
-            showMoreButton = true
+            //Проверяем сколько строк в лейбле. Если больше то сворачиваем и отображаем кнопку "показать больше" соответственно если указано что пост должен быть Full Sized то отображаем полностью
+            if !isFullSizedPost &&  height > limitHeight {
+                height = Constant.postLabelFont.lineHeight * Constant.minifiedPostLines
+                showMoreButton = true
+            }
+            postLabelFrame.size = CGSize(width: labelWidth, height: height)
         }
         
-        postLabelFrame.size = CGSize(width: labelWidth, height: height)
-    }
-    
-    // MARK: Работа с moreTextButtonFrame
-    
-    var moreTextButtonSize = CGSize.zero
-    
-    if showMoreButton {
-        moreTextButtonSize = Constant.moreTextButtonSize
-    }
-    
-    let moreTextButtonOrigin = CGPoint(x: Constant.moreTextButtonInsets.left, y: postLabelFrame.maxY)
-    
-    let moreTextButtonFrame = CGRect(origin: moreTextButtonOrigin, size: moreTextButtonSize)
-
+        // MARK: Работа с moreTextButtonFrame
+        
+        var moreTextButtonSize = CGSize.zero
+        
+        if showMoreButton {
+            moreTextButtonSize = Constant.moreTextButtonSize
+        }
+        
+        let moreTextButtonOrigin = CGPoint(x: Constant.moreTextButtonInsets.left, y: postLabelFrame.maxY)
+        
+        let moreTextButtonFrame = CGRect(origin: moreTextButtonOrigin, size: moreTextButtonSize)
+        
         //Photo frame calculations
         let photoTop = postLabelFrame.size == CGSize.zero ? Constant.postLabelInsets.top : moreTextButtonFrame
             .maxY + Constant.postLabelInsets.bottom
@@ -69,7 +69,6 @@ final class FeedCellLayoutCalculator: FeedCellLayoutProtocol{
             let ratio = CGFloat(photo.height) / CGFloat(photo.width)
             photoFrame.size = CGSize(width: cardViewWidth, height: cardViewWidth * ratio)
         } else if photos?.count ?? 0 > 1 {
-            
             var photoSizes = [CGSize]()
             for photo in photos! {
                 let photoSize = CGSize(width: CGFloat(photo.width), height: CGFloat(photo.height))

@@ -9,7 +9,7 @@
 
 import Foundation
 import UIKit
-
+//Расширяем UIView для удобной расстановки констрейнтов
 extension UIView {
     
     func fillSuperview(padding: UIEdgeInsets) {

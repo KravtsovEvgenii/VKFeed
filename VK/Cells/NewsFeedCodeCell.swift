@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-
+//Ячейка в коде
 protocol NewsfeedCodeCellDelegate: class {
     func revealPost(for cell: NewsFeedCodeCell)
 }
@@ -16,7 +16,7 @@ final class NewsFeedCodeCell : UITableViewCell {
     static let reuseIdentifier = "NewsFeedCodeCell"
     
     
-     weak var showDelegate: NewsfeedCodeCellDelegate?
+     weak var delegate: NewsfeedCodeCellDelegate?
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -34,7 +34,7 @@ final class NewsFeedCodeCell : UITableViewCell {
     }
     
     @objc func moreButtontouchAction() {
-        showDelegate?.revealPost(for: self)
+        delegate?.revealPost(for: self)
     }
     override func prepareForReuse() {
         iconImageView.image = nil
@@ -69,13 +69,7 @@ final class NewsFeedCodeCell : UITableViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-//    let postLabel: UILabel = {
-//       let label = UILabel()
-//        label.font = Constant.postLabelFont
-//        label.textColor = .black
-//        label.numberOfLines = 0
-//        return label
-//    }()
+    
     let postLabel : UITextView = {
         let textView = UITextView()
         textView.font = Constant.postLabelFont

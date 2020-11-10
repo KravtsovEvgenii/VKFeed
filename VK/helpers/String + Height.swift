@@ -9,6 +9,7 @@ import Foundation
 
 import UIKit
 
+//Считаем rect в зависимости от количества текста и размера шрифта
 extension String {
     func calculateHeight(width: CGFloat,font: UIFont)-> CGFloat {
         let textSize = CGSize(width: width, height: .greatestFiniteMagnitude)

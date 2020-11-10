@@ -42,6 +42,7 @@ class VKFeedPresenter: VKFeedPresentationLogic {
         viewController?.displayData(viewModel: .displayFooter)
     }
   }
+    //Формируем модель из полученных данных для отображения в ячейке
     private func cellViewModel(fromResponse item: Item, groups: [Group], profiles: [Profile], revealedPostIds: [Int])->FeedViewModel.Cell {
         
         let presentable = convertToPresentable(sourceID: item.sourceId, groups: groups, profiles: profiles)
@@ -66,6 +67,7 @@ class VKFeedPresenter: VKFeedPresentationLogic {
                                   attachmentsPhoto: photos,
                                   postSizes: sizes)
     }
+    //Форматируем количество просмотров, лайков...
     private func formatAmount(amount: Int?)-> String? {
         guard let amount = amount, amount > 1 else {return nil}
         var stringAmount = String(amount)
@@ -78,6 +80,7 @@ class VKFeedPresenter: VKFeedPresentationLogic {
         return stringAmount
     }
     
+    //Ищем в группах и профилях, которые нам пришли владельца поста для загрузки его аватарки и лейбла
     private func convertToPresentable(sourceID: Int, groups: [Group], profiles: [Profile] )-> ProfileRepresenatable {
 
         let profilesOrGroup: [ProfileRepresenatable] = sourceID >= 0 ? profiles: groups
@@ -88,16 +91,6 @@ class VKFeedPresenter: VKFeedPresentationLogic {
         return representable!
 
     }
-//    private func photoAttachment(feedItem: Item) -> FeedViewModel.FeedCellPhotoAttachementViewModel? {
-//        guard let photos = feedItem.attachments?.compactMap({ (attachment) in
-//            attachment.photo
-//        }), let firstPhoto = photos.first else {
-//            return nil
-//        }
-//        return FeedViewModel.FeedCellPhotoAttachment.init(photoUrlString: firstPhoto.srcBIG,
-//                                                          width: firstPhoto.width,
-//                                                          height: firstPhoto.height)
-//    }
   }
   
 

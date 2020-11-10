@@ -7,7 +7,7 @@
 
 import UIKit
 
-
+//Ячейка из ксиба
 class FeedCell: UITableViewCell {
 
     @IBOutlet weak var cardView: UIView!

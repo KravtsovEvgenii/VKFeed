@@ -34,10 +34,12 @@ class VKFeedInteractor: VKFeedBusinessLogic {
                 self?.presenter?.presentData(response: .presentUser(user: user))
             })
         case .revealPostText(postID: let postID):
+            //Добавляем ID поста, который нужно раскрыть и перезагружаем все посты и отображаем уже все посты, которые должны быть раскрыты - раскрытыми
             service?.revealPostIds(forPostID: postID, completion: {[weak self] (revealedIds, feed) in
                 self?.presenter?.presentData(response: .presentNewsFeed(feed: feed, revealedPostIds: revealedIds))
             })
         case .getNextBatch:
+            //Перед выполнением запроса показываем футер
             self.presenter?.presentData(response: .presentFooter)
             service?.getNextBatch(completion: {[weak self] (revealPostIds, feed) in
                 self?.presenter?.presentData(response: .presentNewsFeed(feed: feed, revealedPostIds: revealPostIds))

@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class GradientView: UIView {
+    //Проперти, которые появятся в атрибут инспекторе в сториборде
     @IBInspectable var startColor: UIColor? {
         didSet {
             setupGradientColor()
